@@ -53,7 +53,6 @@ public class EmployeeController {
 	@DeleteMapping("deleteinbatch")
 	public ResponseEntity<String> deleteEmployeeInBatch(@NotNull @RequestBody List<Employee> empList) {
 		LOGGER.info("Fetching & Deleting User with id {}", empList);
-		LOGGER.warn("  "  );
 		String result=employeeService.deleteInBatch(empList);
 		return new ResponseEntity<String>(result,HttpStatus.OK);
 	}
